@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-apply plugin: 'kotlin-android'
+// apply plugin: 'kotlin-android'
 
 import com.android.build.OutputFile
 
@@ -187,21 +187,21 @@ android {
 
         }
     }
-    configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            def requested = details.requested
-            if (requested.group == 'org.jetbrains.kotlin' && requested.name == 'kotlin-reflect') {
-                details.useVersion "1.6.10"
-            }
-        }
-    }
+    // configurations.all {
+    //     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+    //         def requested = details.requested
+    //         if (requested.group == 'org.jetbrains.kotlin' && requested.name == 'kotlin-reflect') {
+    //             details.useVersion "1.6.10"
+    //         }
+    //     }
+    // }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
